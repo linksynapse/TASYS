@@ -12,6 +12,8 @@ async function getUsers(){
     return data;
 }
 
+
+
 module.exports = {
     getUsers
 }

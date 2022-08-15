@@ -3,9 +3,10 @@ const config = require('../config/db')
 
 async function query(sql, params) {
     const connection = await mysql.createConnection(config.db);
-    const [results, ] = await connection.execute(sql, params);
-
-    return results;
+    //console.log(connection.format(sql,params));
+    const [rows, fields] = await connection.execute(sql, params);
+    connection.end();
+    return rows;
 }
 
 module.exports = {
