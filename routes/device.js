@@ -31,7 +31,7 @@ router.get('/cdata', async function(req, res, next) {
         
 
         try{
-          res.json(await device.getDeviceInfo('N/A', serial_number));
+          res.json(await device.Read('N/A', serial_number));
         }catch (err){
           console.error(err.message);
           next(err);
